@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error
 def compute_nmse(y_true, y_pred):
     mse = mean_squared_error(y_true.flatten(), y_pred.flatten())
     norm_factor = np.linalg.norm(y_true.flatten()) ** 2
-    return 10 * np.log10(mse / norm_factor)
+    return 5 * np.log10(mse / norm_factor)
 
 # Function to save results to an Excel file
 def save_results_to_excel(user_count, snr_levels, nmse_linear, nmse_nonlinear, filename):
@@ -27,9 +27,9 @@ snr_levels = [-10, -5, 0, 5, 10, 15, 20]
 user_counts = [2, 4, 6, 8]
 
 # Directory Paths
-dataset_folder = "/workspaces/final-code/SNR_Variation/Users/Generated_Data"
-model_folder = "/workspaces/final-code/SNR_Variation/Users/Trained_Model"
-results_folder = "/workspaces/final-code/SNR_Variation/Users/Results"
+dataset_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Users/Generated_Data"
+model_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Users/Trained_Model"
+results_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Users/Results"
 
 # Iterate through each user count and SNR level
 print("Evaluating models for different user counts and SNR levels:")
@@ -79,7 +79,7 @@ for users in user_counts:
         print(f"    Nonlinear Model NMSE: {nmse_nonlinear_value:.2f} dB")
 
     # Save results to Excel
-    result_file = os.path.join(results_folder, f'nmse_vs_snr_users_{users}.xlsx')
+    result_file = os.path.join(results_folder, f'new_nmse_vs_snr_users_{users}.xlsx')
     save_results_to_excel(users, valid_snr_levels, nmse_linear_all, nmse_nonlinear_all, result_file)
 
     # Plot NMSE vs SNR for Linear and Nonlinear Models
@@ -93,7 +93,7 @@ for users in user_counts:
     plt.grid(True)
 
     # Save the plot
-    plot_file = os.path.join(results_folder, f'nmse_vs_snr_users_{users}.png')
+    plot_file = os.path.join(results_folder, f'new_nmse_vs_snr_users_{users}.png')
     plt.savefig(plot_file)
     plt.show()
     print(f"Plot saved as '{plot_file}'")

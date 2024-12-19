@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 # Function to generate THz MIMO data with noise power scaling
 def generate_dataset_noise_scaling(snr_values, noise_scaling_factors, num_samples=10000, num_antennas=256, num_users=10, save_folder=None):
     if save_folder is None:
-        save_folder = "/workspaces/final-code/SNR_Variation/Noise_Power/Generated_Data"
+        save_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Noise_Power/Generated_Data"
     os.makedirs(save_folder, exist_ok=True)
     
     # Clean channel matrix (LoS + NLoS)

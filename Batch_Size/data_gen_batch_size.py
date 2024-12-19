@@ -10,7 +10,7 @@ def generate_thz_mimo_data_for_batch_sizes(num_samples=10000, num_antennas=256, 
     if batch_sizes is None:
         batch_sizes = [32, 64, 128]
     if save_folder is None:
-        save_folder = "/workspaces/final-code/SNR_Variation/Batch_Size/Generated_Data"
+        save_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Batch_Size/Generated_Data"
     
     os.makedirs(save_folder, exist_ok=True)
     

@@ -55,8 +55,8 @@ if __name__ == "__main__":
     snr_values = [-10, -5, 0, 5, 10, 15, 20]
     user_counts = [2, 4, 6, 8]
     noise_factor = 0.5
-    dataset_folder = "/workspaces/final-code/SNR_Variation/Users/Generated_Data"
-    save_folder = "/workspaces/final-code/SNR_Variation/Users/Trained_Model"
+    dataset_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Users/Generated_Data"
+    save_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Users/Trained_Model"
 
     for users in user_counts:
         print(f"\n--- Training Models for {users} Users ---")

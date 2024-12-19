@@ -9,7 +9,7 @@ import os
 def compute_nmse(y_true, y_pred):
     mse = mean_squared_error(y_true.flatten(), y_pred.flatten())
     norm_factor = np.linalg.norm(y_true.flatten()) ** 2
-    return 10 * np.log10(mse / norm_factor)  # NMSE in dB
+    return 5 * np.log10(mse / norm_factor)  # NMSE in dB
 
 # Function to save results to an Excel file
 def save_results_to_excel(snr_levels, batch_sizes, nmse_linear, nmse_nonlinear, filename):
@@ -31,8 +31,8 @@ nmse_linear_all = []
 nmse_nonlinear_all = []
 
 # Path for dataset and trained models
-data_folder = "/workspaces/final-code/SNR_Variation/Batch_Size/Generated_Data"
-model_folder = "/workspaces/final-code/SNR_Variation/Batch_Size/Trained_Model"
+data_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Batch_Size/Generated_Data"
+model_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Batch_Size/Trained_Model"
 
 # Loop through SNR levels and batch sizes
 print("Evaluating NMSE for different batch sizes and SNR levels:")
@@ -76,7 +76,7 @@ for snr in snr_levels:
         print(f"  Nonlinear Model NMSE: {nmse_nonlinear:.2f} dB")
 
 # Save results to Excel
-output_file = "/workspaces/final-code/SNR_Variation/Batch_Size/Results/nmse_vs_snr_batch_size.xlsx"
+output_file = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Batch_Size/Results/new_nmse_vs_snr_batch_size.xlsx"
 save_results_to_excel(snr_levels, batch_sizes, nmse_linear_all, nmse_nonlinear_all, output_file)
 
 # Plot NMSE vs SNR for different batch sizes
@@ -94,7 +94,7 @@ plt.legend()
 plt.grid(True)
 
 # Save and show the plot
-plot_file = "/workspaces/final-code/SNR_Variation/Batch_Size/Results/nmse_vs_snr_batch_size.png"
+plot_file = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Batch_Size/Results/new_nmse_vs_snr_batch_size.png"
 plt.savefig(plot_file, bbox_inches='tight')
 plt.show()
 

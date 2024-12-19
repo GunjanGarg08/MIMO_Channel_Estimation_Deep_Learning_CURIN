@@ -50,14 +50,14 @@ def train_model(model, X_train, y_train, X_val, y_val, batch_size, model_name, s
 if __name__ == "__main__":
     snr_values = [-10, -5, 0, 5, 10, 15, 20]
     batch_sizes = [32, 64, 128]
-    save_folder = "/workspaces/final-code/SNR_Variation/Batch_Size/Trained_Model"
+    save_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Batch_Size/Trained_Model"
 
     for batch_size in batch_sizes:
         for snr in snr_values:
             print(f"\nTraining models for Batch Size = {batch_size}, SNR = {snr} dB")
 
             # Load the dataset
-            dataset_file = f'/workspaces/final-code/SNR_Variation/Batch_Size/Generated_Data/dataset_batch_{batch_size}_snr_{snr}.npz'
+            dataset_file = f'/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Batch_Size/Generated_Data/dataset_batch_{batch_size}_snr_{snr}.npz'
             if not os.path.exists(dataset_file):
                 print(f"Dataset not found: {dataset_file}")
                 continue

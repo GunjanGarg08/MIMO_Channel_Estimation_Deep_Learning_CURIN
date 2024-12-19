@@ -9,7 +9,7 @@ def generate_thz_mimo_data_for_users_and_snr(num_samples=10000, num_antennas=256
     if user_counts is None:
         user_counts = [2, 4, 6, 8]  # Different numbers of users
     
-    output_folder = "/workspaces/final-code/SNR_Variation/Users/Generated_Data"
+    output_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Users/Generated_Data"
     os.makedirs(output_folder, exist_ok=True)
 
     for users in user_counts:

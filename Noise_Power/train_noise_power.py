@@ -55,7 +55,7 @@ if __name__ == "__main__":
     snr_values = [-10, -5, 0, 5, 10, 15, 20]
     noise_scaling_factors = [0.5, 1, 2]
     batch_size = 64  # Default batch size
-    save_folder = "/workspaces/final-code/SNR_Variation/Noise_Power/Trained_Model"
+    save_folder = "/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Noise_Power/Trained_Model"
 
     # Iterate over SNR values and noise scaling factors
     for snr in snr_values:
@@ -63,7 +63,7 @@ if __name__ == "__main__":
             print(f"\nTraining for SNR={snr} dB, Noise Scaling Factor={scaling}")
 
             # Load the dataset (modify the path accordingly)
-            dataset_file = f"/workspaces/final-code/SNR_Variation/Noise_Power/Generated_Data/dataset_snr_{snr}_scaling_{scaling}.npz"
+            dataset_file = f"/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Noise_Power/Generated_Data/dataset_snr_{snr}_scaling_{scaling}.npz"
             if not os.path.exists(dataset_file):
                 print(f"Dataset not found: {dataset_file}")
                 continue
