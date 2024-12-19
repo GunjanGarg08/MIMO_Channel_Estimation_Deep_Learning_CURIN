@@ -20,7 +20,7 @@ results = []
 # Evaluate models
 for snr in snr_values:
     for scaling in noise_scaling_factors:
-        dataset_file = f"/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Noise_Power/Generated_Data/dataset_snr_{snr}scaling{scaling}.npz"
+        dataset_file = f"/workspaces/MIMO_Channel_Estimation_Deep_Learning_CURIN/Noise_Power/Generated_Data/dataset_snr_{snr}_scaling_{scaling}.npz"
         if not os.path.exists(dataset_file):
             print(f"Dataset missing: {dataset_file}")
             continue
